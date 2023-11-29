@@ -13,10 +13,12 @@ module.exports = {
 					{ name: 'NBA Moneyline', value: 'NBA_ML' },
 					{ name: 'MLB Moneyline', value: 'MLB_ML' },
 					{ name: 'NHL Moneyline', value: 'NHL_ML'},
+					{ name: 'NCAAF Moneyline', value: 'NCAAF_ML'},
 					{ name: 'SOCCER Moneyline', value: 'SOCCER_ML'},
 					{ name: 'NBA O/U', value: 'NBA_OU' },
 					{ name: 'MLB O/U', value: 'MLB_OU'},
 					{ name: 'NHL O/U', value: 'NHL_OU'},
+					{ name: 'NCAAF O/U', value: 'NCAAF_OU'},
 					{ name: 'SOCCER O/U', value: 'SOCCER_OU'},
 					{ name: 'ALL', value: 'ALL'}
 				)),
@@ -38,10 +40,12 @@ module.exports = {
 						let message = "NBA MoneyLine\n" + await getOdds("NBA_ML", true) + "\n\n";
 						message += "MLB MoneyLine\n" + await getOdds("MLB_ML", true) + "\n\n";
 						message += "NHL MoneyLine\n" + await getOdds("NHL_ML", true) + "\n\n";
+						message += "NCAAF MoneyLine\n" + await getOdds("NCAAF_ML", true) + "\n\n";
 						message += "SOCCER MoneyLine\n" + await getOddsSoccer("SOCCER_ML", true) + "\n\n";
 						message += "NBA Over/Under\n" + await getOddsOU("NBA_OU", true) + "\n\n";
 						message += "MLB Over/Under\n" + await getOddsOU("MLB_OU", true) + "\n\n";
-						message += "NHL Over/Under\n" + await getOdds("NHL_OU", true) + "\n\n";
+						message += "NHL Over/Under\n" + await getOddsOU("NHL_OU", true) + "\n\n";
+						message += "NCAAF Over/Under\n" + await getOddsOU("NCAAF_OU", true) + "\n\n";
 						message += "SOCCER Over/Under\n" + await getOddsOU("SOCCER_OU", true) + "\n\n";
 						stringToTxt("All Sports", message, interaction);
 					}

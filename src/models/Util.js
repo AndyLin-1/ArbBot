@@ -10,6 +10,9 @@ function getLink_Base(type) {
     } else if(type == "NHL_ML" || type == "NHL_OU") {
         link = "https://api.actionnetwork.com/web/v1/scoreboard/nhl?period=game&bookIds=15,30,76,75,123,69,68,71,79&date=";
     }
+    else if(type == "NCAAF_ML" || type == "NCAAF_OU") {
+        link = "https://api.actionnetwork.com/web/v1/scoreboard/ncaaf?period=game&bookIds=15,30,76,75,123,69,68,71,79&date=";
+    }
     return link;
 }
 
@@ -55,7 +58,6 @@ function generateStringTable(data) {
       });
       return lengths;
     }, []);
-  
     // Generate the table as a string
     const table = data.map(row =>
       row.map((cell, index) => cell.padEnd(columnLengths[index])).join(" | ")

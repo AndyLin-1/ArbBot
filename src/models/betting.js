@@ -345,7 +345,7 @@ async function scanFreeBet(type, amount, sportsbook) {
             //Cut Lower
             if(freeBetML.length == 1 || conversion > freeBetML[1][9]) {
                 freeBetML.splice(1,1);
-                freeBetML.push([awayTeamName, awayML, awayML.toFixed(2), wager.toFixed(2),
+                freeBetML.push([awayTeamName, awayML.toFixed(2), awayML.toFixed(2), wager.toFixed(2),
                     homeTeamName, bookie(sportsbook), homeML1.toFixed(2), amount.toString(),
                     profit.toFixed(2), conversion.toFixed(3)]);
             }
@@ -399,7 +399,7 @@ async function scanFreeBet(type, amount, sportsbook) {
                 conversion = profit/amount * 100;
                 if(freeBetOU.length == 1 || conversion > freeBetOU[1][9]) {
                     freeBetOU.splice(1,1);
-                    freeBetOU.push([teams, total, 
+                    freeBetOU.push([teams, total.toFixed(2), 
                                 bookie(sportsbook), over1.toFixed(2), amount.toString(),
                                 underSB, under.toFixed(2), wager.toFixed(2),
                                 profit.toFixed(2), conversion.toFixed(3)]);
@@ -414,7 +414,7 @@ async function scanFreeBet(type, amount, sportsbook) {
                 //Cut Lower
                 if(freeBetOU.length == 1 || conversion > freeBetOU[1][9]) {
                     freeBetOU.splice(1,1);
-                    freeBetOU.push([teams, total,
+                    freeBetOU.push([teams, total.toFixed(2),
                         overSB, over.toFixed(2), wager.toFixed(2),
                         bookie(sportsbook), under1.toFixed(2), amount.toString(),
                         profit.toFixed(2), conversion.toFixed(3)]);
